@@ -21,28 +21,16 @@ public class item {
 	 */
 	public item() throws IOException {
 		item=new  HashMap<String,String>();
-		File d=new File("C:\\Users\\taoyi99\\Desktop\\eclipse\\list.txt");
-		InputStreamReader reader = new InputStreamReader(  
-                new FileInputStream(d));
-		BufferedReader t=new BufferedReader(reader);
-		String tmp=t.readLine();
-		for(int i=0;tmp!=null;i++){
-			//System.out.println(i);
-			/*StringTokenizer k=new StringTokenizer(tmp," ");
-			
-				add(k.nextToken(), k.nextToken());
-				//item.put(t, t);
-			*/
-			tmp=t.readLine();
-		}
-		t.close();
+		
+		item.put("t", "t");
+		item.put("tt", "tt");
 	}
 	
 	
 	/*
 	 * 取得所有商品的key值 回傳一set內容為所有商品key
 	 */
-	public Set<String> getitemk(String k){
+	public Set<String> getitemk(){
 		return item.keySet();
 	}
 	

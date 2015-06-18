@@ -13,30 +13,38 @@ import java.util.StringTokenizer;
 public class rule {
 
 	HashMap<String,LinkedList<String>> rule;//存購物規則
+	LinkedList<String> most;//最常出現的物品 
 	/*
-	 * 初始化 物件一輩建立即讀檔 file 路徑要對 怎麼讀還要討論 
-	 * 可能可以處理購買2種以上商品該推薦什麼 以購買了 1 ,2 ,3為例
-	 * key可以為  "1 2 3" 
+	 * 初始化 物件 
+	 * 
 	 */
 	public rule() throws IOException   {
-		
+		//most=new LinkedList<String>();
 		 rule=new HashMap<String,LinkedList<String>>();
-		 File d=new File("C:\\Users\\taoyi99\\Desktop\\eclipse\\list.txt");
-			InputStreamReader reader = new InputStreamReader(  
-	                new FileInputStream(d)); 
-			BufferedReader t=new BufferedReader(reader);
-			String tmp=t.readLine();
-			for(;tmp!=null;){
-			
-				tmp=t.readLine();
-			}
-			t.close();
+		 most=new LinkedList<String>();
+		 most.add("t");
+		 LinkedList<String> k=new LinkedList<String>();
+		 k.add("tt");
+		 rule.put("t", k);// t/tt
 	}
 	/*
 	 * 取得在某一購物後   由購物規則規定可能的購買物品   
-	 * 回傳一linkedlist<string> 內容為由購物規則規定的商品 
+	 * 回傳一linkedlist<string> 內容為由購物規則規定的商品  
 	 */
 	public LinkedList<String> get(String k){
-		return rule.get(k);
+		LinkedList<String> list;
+		if(rule.containsKey(k)){
+			list=rule.get(k);
+			for(int i=0;list.size()<3;i++){
+				list.add(most.get(i));
+			}
+		return list;
+		}
+		else{
+			//LinkedList<String> most=new LinkedList<String>();
+			//most.add("t");
+			return most;
+		}
 	}
+	
 }

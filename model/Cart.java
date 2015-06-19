@@ -5,21 +5,21 @@ public class Cart {
 	private HashMap<String, Integer> cart = new HashMap<String, Integer>();
 	
 	/*
-	 * ·s¼W¤@°Ó«~¦ÜÁÊª«¨®¤¤ k = °Ó«~key, num = °Ó«~¼Æ¶q 
+	 * æ–°å¢ä¸€å•†å“è‡³è³¼ç‰©è»Šä¸­ k = å•†å“key, num = å•†å“æ•¸é‡ 
 	 */
 	public void Add(String k, int num){
 		cart.put(k, num);
 	}
 	
 	/*
-	 * ¨ú±oÁÊª«¨®¤¤©Ò¦³°Ó«~ªº key ¸ò¼Æ¶q
+	 * å–å¾—è³¼ç‰©è»Šä¸­æ‰€æœ‰å•†å“çš„ key è·Ÿæ•¸é‡
 	 */
 	public HashMap<String, Integer> GetCart(){
 		return cart;
 	}
 	
 	/*
-	 * ²¾°£¤@°Ó«~
+	 * ç§»é™¤ä¸€å•†å“
 	 */
 	public void remove(String k){
 		cart.remove(k);

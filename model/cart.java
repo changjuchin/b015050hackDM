@@ -1,49 +1,28 @@
-package test;
+import java.util.HashMap;
 
+public class Cart {
 
-import java.util.LinkedList;
-
-/*
- * 購物車
- * 
- */
-public class cart {
-
-
-	LinkedList<String> cartitemk;//跟cart很像不過用另一種方式存key  
-//	LinkedList<String> cartitemv;//同上 改成value
+	private HashMap<String, Integer> cart = new HashMap<String, Integer>();
 	
-	public cart(){
-
-		cartitemk=new LinkedList<String>();
-	//	cartitemv=new LinkedList<String>();
+	/*
+	 * 新增一商品至購物車中 k = 商品key, num = 商品數量 
+	 */
+	public void Add(String k, int num){
+		cart.put(k, num);
 	}
 	
 	/*
-	 * 新增一商品至購物車中 k=商品key 
+	 * 取得購物車中所有商品的 key 跟數量
 	 */
-	public void add(String k){
-		if(k!=null){
-		cartitemk.add(k);
-		}
-		//cartitemv.add(v);
-		
-		
-	//	LinkedList<String> tmp=rule.get(cartitemk);
-		//dynamic.set(tmp);
+	public HashMap<String, Integer> GetCart(){
+		return cart;
 	}
+	
 	/*
-	 * 取的購物車中所有商品 的key
-	 */
-	public LinkedList<String> getcartitemk(){
-		return cartitemk;
-	}
-	/*
-	 * 移除依商品key
+	 * 移除一商品
 	 */
 	public void remove(String k){
-		cartitemk.remove(k);
+		cart.remove(k);
 	}
-
 	
 }

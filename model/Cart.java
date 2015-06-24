@@ -1,17 +1,17 @@
-package test1;
+package hackDM;
 
 import java.util.HashMap;
 
 public class Cart {
 
-	private HashMap<String, Integer> cart = new HashMap<String, Integer>();
+	private HashMap<String, String> cart = new HashMap<String, String>();
 	
 	/**
 	 * 新增一商品至購物車中
 	 * @param k = 商品key
 	 * @param num = 商品數量
 	 */
-	public void Add(String k, int num){
+	public void Add(String k, String num){
 		cart.put(k, num);
 	}
 	
@@ -19,7 +19,7 @@ public class Cart {
 	 * 取得購物車中所有商品的key跟數量
 	 * @return cart
 	 */
-	public HashMap<String, Integer> GetCart(){
+	public HashMap<String, String> GetCart(){
 		return cart;
 	}
 	

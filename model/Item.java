@@ -1,62 +1,59 @@
-package test;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+package hackDM;
 
 import java.util.HashMap;
 import java.util.Set;
-/*
- * ç´€éŒ„å…¨éƒ¨çš„å•†å“
- */
-public class item {
 
-	HashMap<String,String> item;//å­˜å•†å“idåç¨±
+/*
+ * ¬ö¿ı¥ş³¡ªº°Ó«~
+ */
+
+public class Item {
+	
+	HashMap<String,String> item;//¦s°Ó«~id¦WºÙ
+	
 	/*
-	 * åˆå§‹åŒ–       ç•¶ç‰©ä»¶å»ºç«‹å³è®€æª”        fileè·¯å¾‘è¦å°
-	 * è‡³æ–¼å¦‚ä½•è™•ç†txtçš„å…§å®¹é‚„ä¸ç¢ºå®š è¦å†è¨è«–
+	 * ªì©l¤Æ       ·íª«¥ó«Ø¥ß§YÅªÀÉ        file¸ô®|­n¹ï
+	 * ¦Ü©ó¦p¦ó³B²ztxtªº¤º®eÁÙ¤£½T©w ­n¦A°Q½×
 	 */
-	public item() throws IOException {
+	public Item(){
 		item=new  HashMap<String,String>();
 		
-		item.put("t", "t");
-		item.put("tt", "tt");
+		for(int i = 1; i <= 100; i++){
+			item.put("t"+i, "type"+i);
+		}
 	}
 	
 	
 	/*
-	 * å–å¾—æ‰€æœ‰å•†å“çš„keyå€¼ å›å‚³ä¸€setå…§å®¹ç‚ºæ‰€æœ‰å•†å“key
+	 * ¨ú±o©Ò¦³°Ó«~ªºkey­È ¦^¶Ç¤@set¤º®e¬°©Ò¦³°Ó«~key
 	 */
 	public Set<String> getitemk(){
 		return item.keySet();
 	}
 	
 	/*
-	 * åŒä¸Š åªæ˜¯keyè®Švalue
+	 * ¦P¤W ¥u¬OkeyÅÜvalue
 	 */
 	public String getitemv(String k){
 		return item.get(k);
 	}
 	
 	/*
-	 * å–å¾—ç‰©ä»¶å­˜å•†å“çš„ hashmap
+	 * ¨ú±oª«¥ó¦s°Ó«~ªº hashmap
 	 */
-	public HashMap<String,String> getitemall(){
+	public HashMap<String,String> GetItem(){
 		return item;
 	}
 	
 	/*
-	 * æ–°å¢ä¸€å•†å“ kç‚ºkeyå€¼ å¯èƒ½æ˜¯id vç‚ºvalueå¯èƒ½æ˜¯åç¨±
+	 * ·s¼W¤@°Ó«~ k¬°key­È ¥i¯à¬Oid v¬°value¥i¯à¬O¦WºÙ
 	 */
 	public void add(String k,String v){
 		item.put(k, v);
 	}
 	
 	/*
-	 * ç§»é™¤ä¾å•†å“ kç‚ºkey vç‚ºvalue
+	 * ²¾°£¨Ì°Ó«~ k¬°key v¬°value
 	 */
 	public void remove(String k,String v){
 		item.remove(k, v);
